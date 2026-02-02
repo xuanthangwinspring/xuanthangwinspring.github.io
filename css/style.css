@@ -139,6 +139,8 @@ nav ul li a:hover {
 /* --- NỘI DUNG CHÍNH --- */
 
 .region {
+    max-width: 100%;
+    overflow-x: hidden;
     background: white;
     padding: 5%;
     margin-bottom: 6%;
@@ -319,7 +321,7 @@ footer h4 {
     display: flex;
     width: 100%;
     padding: 0 4%;
-    gap: 6%;
+    gap: 24px;
     /* Tăng khoảng cách để thoáng hơn */
     max-width: 1300px;
     /* Giới hạn chiều rộng tối đa để không bị quá loãng trên màn hình 4K */
@@ -368,6 +370,9 @@ footer h4 {
 @media (max-width: 992px) {
     .container {
         flex-direction: column;
+        padding-left: 4%;
+        padding-right: 4%;
+        gap: 24px;
     }
 }
 
@@ -494,14 +499,21 @@ footer h4 {
     }
 }
 @media (max-width: 768px) {
+    .region h3,
+    .sidebar-item h3 {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
     .region h3 {
-        margin-left: -5%;
+        margin-left: 0;
         padding: 3% 10% 3% 5%;
         font-size: 4.8vw;
     }
 
     .sidebar-item h3 {
-        margin-left: -6%;
+        margin-left: 0;
         padding: 3% 9% 3% 4%;
     }
 }
@@ -513,6 +525,7 @@ iframe {
 }
 @media (max-width: 768px) {
     table {
+        border-spacing: 0;
         width: 100%;
         display: block;
     }
