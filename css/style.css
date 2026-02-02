@@ -1,23 +1,8 @@
 /* --- TỔNG THỂ --- */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-    /* Thay 80px bằng chiều cao thanh menu của bạn */
+    scroll-padding-top: 80px; /* Thay 80px bằng chiều cao thanh menu của bạn */
 }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -26,20 +11,11 @@ body {
     padding: 0;
     color: #333;
 }
-
 .h2-left h2 {
     text-align: left;
 }
-
-p,
-label {
-    font-size: 20px;
-}
-
-blockquote {
-    font-size: 18px;
-}
-
+p, label {font-size: 20px;}
+blockquote {font-size: 18px;}
 h1,
 h2,
 h3 {
@@ -52,53 +28,34 @@ h3 {
     color: #d32f2f;
     letter-spacing: 2px;
 }
-
-input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+input{
+    flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+}
+textarea{
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
 }
 
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-input,
-textarea,
-option,
-select,
-button {
+input, textarea, option, select, button {
     font-family: inherit;
     font-size: 1rem;
 }
-
 /* --- HEADER & NAV --- */
 .region-picture {
-    display: flex;
-    gap: 10px;
+    display: flex; gap: 10px;
 }
-
 .region-picture img {
-    width: 50%;
-    height: 250px;
-    object-fit: cover;
+    width: 50%; height: 250px; object-fit: cover;
 }
 
 header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg') no-repeat center center;
     background-size: cover;
     color: rgb(0, 102, 57);
-    padding: 15vw 5%;
+    padding: 100px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-header h1,
-header h2 {
+header h1, header h2 {
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
     font-weight: bold;
 }
@@ -139,11 +96,9 @@ nav ul li a:hover {
 /* --- NỘI DUNG CHÍNH --- */
 
 .region {
-    max-width: 100%;
-    overflow-x: hidden;
     background: white;
-    padding: 5%;
-    margin-bottom: 6%;
+    padding: 25px;
+    margin-bottom: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border-top: 5px solid #d32f2f;
@@ -278,11 +233,9 @@ td {
     max-height: 85%;
     border: 4px solid white;
 }
-
-#footer-date {
-    color: rgb(81, 255, 0);
+#footer-date{
+    color:rgb(81, 255, 0);
 }
-
 footer {
     background: #0058c0;
     color: #bdc3c7;
@@ -295,7 +248,6 @@ footer h2 {
     color: yellow;
     text-align: center;
 }
-
 footer h4 {
     margin: 5px 0;
     color: white;
@@ -303,14 +255,12 @@ footer h4 {
 }
 
 @media screen and (max-width: 768px) {
-
     table,
     tr,
     td {
         display: block;
         width: 100% !important;
     }
-
     .flip-container {
         grid-template-columns: 1fr;
     }
@@ -319,37 +269,27 @@ footer h4 {
 /* --- HIỆU CHỈNH BỐ CỤC CHÍNH --- */
 .container {
     display: flex;
-    width: 100%;
-    padding: 0 4%;
-    gap: 24px;
-    /* Tăng khoảng cách để thoáng hơn */
-    max-width: 1300px;
-    /* Giới hạn chiều rộng tối đa để không bị quá loãng trên màn hình 4K */
+    gap: 30px; /* Tăng khoảng cách để thoáng hơn */
+    max-width: 1300px; /* Giới hạn chiều rộng tối đa để không bị quá loãng trên màn hình 4K */
     margin: 30px auto;
-    /* Padding chống tràn cho mobile */
-    align-items: flex-start;
-    /* Giúp sidebar không bị kéo dài hụt hẫng */
+    padding: 0 20px; /* Padding chống tràn cho mobile */
+    align-items: flex-start; /* Giúp sidebar không bị kéo dài hụt hẫng */
 }
 
 /* Cột nội dung chính (Trái) */
 .content-left {
-    flex: 3;
-    /* Chiếm 3 phần diện tích */
-    min-width: 0;
-    /* Fix lỗi tràn nội dung trong flex-item */
+    flex: 3; /* Chiếm 3 phần diện tích */
+    min-width: 0; /* Fix lỗi tràn nội dung trong flex-item */
 }
 
 /* Cột Sidebar (Phải) */
 .sidebar-right {
-    flex: 1;
-    /* Chiếm 1 phần diện tích (tương đương ~25-30%) */
+    flex: 1; /* Chiếm 1 phần diện tích (tương đương ~25-30%) */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: sticky;
-    /* Sidebar sẽ trượt theo khi cuộn trang */
-    top: 80px;
-    /* Cách mép trên khi cuộn (phụ thuộc vào độ cao nav) */
+    position: sticky; /* Sidebar sẽ trượt theo khi cuộn trang */
+    top: 80px; /* Cách mép trên khi cuộn (phụ thuộc vào độ cao nav) */
 }
 
 /* Style cho các khối trong Sidebar */
@@ -370,33 +310,24 @@ footer h4 {
 @media (max-width: 992px) {
     .container {
         flex-direction: column;
-        padding-left: 4%;
-        padding-right: 4%;
-        gap: 24px;
     }
 }
 
 .region h3 {
-    display: inline-block;
-    /* Để thẻ ôm sát nội dung */
-    background-color: #3498db;
-    /* Màu xanh chủ đạo của mẫu */
-    color: white;
-    /* Chữ màu trắng */
-    padding: 10px 40px 10px 20px;
-    /* Padding phải lớn hơn để nhường chỗ cho đuôi nhọn */
+    display: inline-block;      /* Để thẻ ôm sát nội dung */
+    background-color: #3498db;  /* Màu xanh chủ đạo của mẫu */
+    color: white;               /* Chữ màu trắng */
+    padding: 10px 40px 10px 20px; /* Padding phải lớn hơn để nhường chỗ cho đuôi nhọn */
     font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: bold;
-    text-align: left;
-    /* Căn lề trái thay vì center */
-    margin: 0 0 20px -25px;
-    /* Margin âm để thẻ sát mép trái của .region */
+    text-align: left;           /* Căn lề trái thay vì center */
+    margin: 0 0 20px -25px;     /* Margin âm để thẻ sát mép trái của .region */
     position: relative;
-
+    
     /* Tạo hình dáng đuôi nhọn bằng clip-path */
     clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
-
+    
     /* Một chút hiệu ứng chữ cho giống ảnh */
     letter-spacing: 1px;
 }
@@ -415,7 +346,7 @@ footer h4 {
 .reveal {
     opacity: 0;
     transform: translateY(60px);
-    transition:
+    transition: 
         opacity 0.9s ease,
         transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity;
@@ -429,7 +360,6 @@ footer h4 {
 
 /* Tối ưu mobile */
 @media (max-width: 768px) {
-
     .reveal,
     .reveal-left,
     .reveal-right {
@@ -462,80 +392,4 @@ footer h4 {
         right: 20px;
         font-size: 34px;
     }
-}
-
-@media (max-width: 768px) {
-
-    body {
-        font-size: 4.2vw;
-        /* ~16px */
-    }
-
-    p,
-    label {
-        font-size: 4.5vw;
-    }
-
-    blockquote {
-        font-size: 4.2vw;
-    }
-
-}
-@media (max-width: 768px) {
-    .flip-container {
-        grid-template-columns: 100%;
-        gap: 6%;
-    }
-
-    .flip-card {
-        width: 100%;
-        height: 90vw; /* tỉ lệ theo width */
-        max-height: 420px;
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-        padding: 6%;
-    }
-}
-@media (max-width: 768px) {
-    .region h3,
-    .sidebar-item h3 {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-@media (max-width: 768px) {
-    .region h3 {
-        margin-left: 0;
-        padding: 3% 10% 3% 5%;
-        font-size: 4.8vw;
-    }
-
-    .sidebar-item h3 {
-        margin-left: 0;
-        padding: 3% 9% 3% 4%;
-    }
-}
-img,
-video,
-iframe {
-    max-width: 100%;
-    height: auto;
-}
-@media (max-width: 768px) {
-    table {
-        border-spacing: 0;
-        width: 100%;
-        display: block;
-    }
-
-    td {
-        width: 100%;
-        padding: 5%;
-    }
-}
-#lightbox-overlay img {
-    max-width: 90vw;
-    max-height: 85vh;
 }
