@@ -392,4 +392,106 @@ footer h4 {
         right: 20px;
         font-size: 34px;
     }
+
+}
+/* --- TỐI ƯU CHI TIẾT CHO MOBILE --- */
+@media screen and (max-width: 768px) {
+    /* Điều chỉnh font chữ toàn cục cho mobile */
+    p, label {
+        font-size: 17px; /* Giảm từ 20px xuống để vừa mắt hơn */
+        line-height: 1.5;
+    }
+    
+    blockquote {
+        font-size: 16px;
+    }
+
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+
+    /* Header & Banner */
+    header {
+        padding: 60px 15px; /* Giảm padding để tiết kiệm diện tích */
+    }
+
+    /* Menu điều hướng - Cho phép cuộn ngang nếu quá dài */
+    nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    nav ul li a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Hình ảnh khu vực (Region Pictures) */
+    .region-picture {
+        flex-direction: column; /* Chuyển thành 1 cột */
+    }
+    
+    .region-picture img {
+        width: 100%;
+        height: 200px; /* Giảm chiều cao hình ảnh */
+    }
+
+    /* Thẻ lật (Flip Card) - Quan trọng! */
+    .flip-card {
+        height: auto; /* Bỏ chiều cao cố định */
+        min-height: 300px;
+    }
+    
+    .flip-card-inner {
+        /* Trên mobile có thể cân nhắc tắt hiệu ứng lật nếu nó gây khó chịu, 
+           hoặc giữ nguyên nhưng đảm bảo nội dung không bị tràn */
+    }
+    
+    .flip-card-front, .flip-card-back {
+        padding: 20px;
+        position: relative; /* Nếu không cần hiệu ứng lật trên mobile, dùng relative */
+    }
+
+    /* Content & Sidebar */
+    .container {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    .region {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* H3 ribbon (cái đuôi nhọn) */
+    .region h3 {
+        margin-left: -15px; /* Khớp với padding của .region mới */
+        font-size: 1.1rem;
+        padding: 8px 30px 8px 15px;
+    }
+
+    /* Gallery (Lưới ảnh) */
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr; /* Giữ 2 cột hoặc 1 cột tùy ý */
+        gap: 8px;
+    }
+
+    /* Form & Input */
+    input, textarea {
+        font-size: 16px; /* Tránh iOS tự động zoom khi focus vào input */
+        padding: 10px;
+    }
+}
+
+/* Tối ưu thêm cho màn hình cực nhỏ (iPhone SE, v.v.) */
+@media screen and (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 1.3rem;
+    }
 }
