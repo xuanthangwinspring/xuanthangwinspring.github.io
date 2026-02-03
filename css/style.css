@@ -85,7 +85,9 @@ button {
     object-fit: cover;
     max-width: 100%;
 }
-
+.opacity {
+    filter: opacity(60%);
+}
 header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg') no-repeat center center;
     background-size: cover;
@@ -585,4 +587,5 @@ footer h4 {
         flex-direction: column;
     }
 }
+
 
