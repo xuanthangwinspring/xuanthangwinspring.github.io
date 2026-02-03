@@ -14,12 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".img-item, .img-item2");
   const lightbox = document.getElementById("lightbox-overlay");
   const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
   const lightboxClose = document.getElementById("lightbox-close");
 
   // Mở lightbox
+  const getImageCaption = (img) => {
+    const altText = img.getAttribute("alt") || "";
+    if (altText.trim()) return altText.trim();
+    const titleText = img.getAttribute("title") || "";
+    if (titleText.trim()) return titleText.trim();
+    const dataCaption = img.dataset.caption || "";
+    if (dataCaption.trim()) return dataCaption.trim();
+    const filename = (img.src || "").split("/").pop() || "";
+    return filename.replace(/\.[a-z0-9]+$/i, "").replace(/[-_]+/g, " ").trim();
+  };
+
   images.forEach((img) => {
     img.addEventListener("click", () => {
+      const caption = getImageCaption(img);
       lightboxImg.src = img.src;
+      lightboxImg.alt = caption;
+      lightboxCaption.textContent = caption;
+      lightboxCaption.style.display = caption ? "block" : "none";
       lightbox.style.display = "flex";
     });
   });
@@ -56,6 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(targetId).scrollIntoView({
         behavior: "smooth",
       });
+    });
+  });
+
+  // 6. Láº­t tháº» theo click (khÃ´ng láº­t khi hover)
+  document.querySelectorAll(".flip-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("is-flipped");
     });
   });
 });
